@@ -1,0 +1,9 @@
+3. Making Join table migrations w/o models
+4. Has many in models
+5. Class name
+
+6. Validations based on data-types
+8. Callbacks
+9. Default Scope 'order by created_at desc'
+
+7. Sample population rake task

@@ -1,0 +1,50 @@
+HABTM
+----------------------------
+Prototype   => Property
+Prototype   => OptionType
+Product     => Category
+Product     => OptionType
+OptionValue => Variant
+Coupon      => Product
+Wishlist    => Product
+
+POLYMORPHIC
+----------------------------
+Order                 => Paymentable (online, offline)
+LineItem              => Itemable (shipment, order, cart)
+SupportTicketResponse => Respondable (customer, employee)
+AccessLog             => Loggable (customer, employee)
+
+HAS MANY / BELONGS TO
+----------------------------
+OptionType      => OptionValue
+Brand           => Product
+Product         => Variant
+Product         => ProductProperty
+Property        => ProductProperty
+Product         => ProductImage
+Product         => ProductVideo
+Variant         => PriceList
+Variant         => StockUpdate
+Customer        => CustomerAlert
+Pincode         => CustomerAddress
+City            => CustomerAddress
+State           => CustomerAddress
+Country         => CustomerAddress
+Customer        => SupportTicket
+SupportTicket   => SupportTicketResponse
+Country         => State
+Country         => City
+City            => Pincode
+Customer        => PageRequest
+Pincode         => COD
+Customer        => Cart
+Variant         => LineItem
+Customer        => Order
+Coupon          => Order
+OrderStatus     => Order
+CustomerAddress => Order
+Order           => Shippment
+Customer        => ProductReview
+Product         => ProductReview
+Customer        => Wishlist

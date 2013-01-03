@@ -1,0 +1,274 @@
+Category:
+  id: integer
+  name: string
+  parent_id: integer
+  sort_order: integer
+  enabled: boolean
+  slug: string
+  meta_title: string
+  meta_keywords: string
+  meta_description: text
+  description: text
+
+CategoryHierarchy:
+  ancestor: references
+  descendant: references
+  generations: integer
+
+Brand:
+  id: integer
+  enabled: boolean
+  name: string
+  slug: string
+  meta_title: string
+  meta_keywords: string
+  meta_description: text
+  description: text
+
+Prototype:
+  id: integer
+  name: string
+
+Property:
+  id: integer
+  name: string
+  display_name: string
+
+OptionType:
+  id: integer
+  name: string
+  display_name: string
+
+OptionValue:
+  id: integer
+  name: string
+  display_name: string
+  option_type: references
+
+Product:
+  id: integer
+  brand: references
+  name: string
+  slug: string
+  meta_title: string
+  meta_keywords: string
+  meta_description: text
+  description: text
+  enabled: boolean
+
+Variant:
+  id: integer
+  sku: string
+  is_master: boolean
+  product: references
+  current_stock: integer
+
+ProductProperty:
+  id: integer
+  value: string
+  product: references
+  property: references
+
+ProductImage:
+  id: integer
+  product: references
+  photo: attachment
+  sort_order: integer
+
+ProductVideo:
+  id: integer
+  product: references
+  youtube_url: string
+  sort_order: integer
+
+PriceList:
+  id: integer
+  variant: references
+  cost_price: decimal
+  flat_value_markup: decimal
+  percentage_markup: decimal
+  selling_price: decimal
+  tax:  decimal
+  valid_from: datetime
+
+StockUpdate:
+  id: integer
+  variant: references
+  change: integer
+  reason: string
+
+Customer:
+  id: integer
+  name: string
+  gender_cd: integer
+  mobile: string
+  birthday: date
+  is_offline: boolean
+  provider: string
+  uid: string
+
+CustomerAlert:
+  id: integer
+  type_cd: integer
+  customer: references
+
+CustomerAddress:
+  id: integer
+  short_name: string
+  first_name: string
+  last_name: string
+  contact_number: string
+  line_one: string
+  line_two: string
+  pincode: references
+  city: references
+  state: references
+  country: references
+
+Employee:
+  id: integer
+  name: string
+
+AccessLog:
+  id: integer
+  loggable: references
+  sign_in_ip: string
+
+Feedback:
+  id: integer
+  name: string
+  email: string
+  number: string
+  message: text
+  from_page: string
+
+SupportTicket:
+  id: integer
+  unique_code: string
+  name: string
+  customer: references
+  status_cd: integer
+
+SupportTicketResponse:
+  id: integer
+  support_ticket: references
+  body: text
+  respondable: references
+
+Country:
+  id: integer
+  name: string
+
+State:
+  id: integer
+  name: string
+  country: references
+
+City:
+  id: integer
+  name: string
+  country: references
+
+Pincode:
+  id: integer
+  name: string
+  city: references
+
+PageRequest:
+  id: integer
+  path: string
+  session: string
+  customer: references
+  page_duration: integer
+  db_duration: integer
+
+SearchRequest:
+  id: integer
+  term: string
+  first_page_products: string
+  number_of_results: integer
+
+COD:
+  enabled: boolean
+  min_order_value: decimal
+  max_order_value: decimal
+  pincode: references
+
+Cart:
+  id: integer
+  customer: references
+
+LineItem:
+  id: integer
+  itemable: references
+  variant: references
+  quantity: integer
+
+OrderStatus:
+  id: integer
+  name: string
+
+Order:
+  id: integer
+  unique_code: string
+  customer: references
+  coupon: references
+  gift_wrap: boolean
+  order_status: references
+  shipping_address: references
+  billing_address: references
+  made_offline: boolean
+  paymentable: references
+
+Shippment:
+  id: integer
+  order: references
+  unique_code: string
+
+OnlinePayment:
+  id: integer
+  successful: boolean
+  amount: decimal
+  transaction_id: string
+  bank_transaction_id: string
+  notes: text
+
+OfflinePayment:
+  id: integer
+  method_cd: integer
+  cheque_number: string
+  amount: decimal
+  notes: text
+
+ProductReview:
+  id: integer
+  customer: references
+  product: references
+  rating: integer
+  body: text
+
+Coupon:
+  id: integer
+  unique_code: string
+  name: string
+  minimum_order_value: decimal
+  flat_discount: decimal
+  percentage_discount: decimal
+  number_of_uses: integer
+  valid_from: datetime
+  valid_till: datetime
+  public: boolean
+
+ContentPage:
+  title: string
+  slug: string
+  meta_title: string
+  meta_keywords: string
+  meta_description: text
+  description: text
+
+Wishlist:
+  id: integer
+  customer: references
+  is_public: boolean
+  slug: string

@@ -1,0 +1,8 @@
+development:
+  adapter: mysql2
+  database: cambitas_development
+  host: localhost
+  username: root
+  password: Qwerty123!
+  pool: 5
+  timeout: 5000

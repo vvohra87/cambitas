@@ -1,0 +1,87 @@
+.table tbody tr:hover td, .table tbody tr:hover th {
+background-color: #fffad1;
+cursor: pointer;
+}
+
+textarea {
+  height: 65px;
+}
+
+.table caption + thead tr:first-child th, .table caption + thead tr:first-child td, .table colgroup + thead tr:first-child th, .table colgroup + thead tr:first-child td, .table thead:first-child tr:first-child th, .table thead:first-child tr:first-child td {
+  border: 1px solid #ddd;
+}
+
+
+table.dataTable tr.odd td.sorting_1 {
+  background-color: #fceda4;
+}
+
+table.dataTable tr.even td.sorting_1 {
+  background-color: #fff4bf;
+}
+
+table.dataTable td {
+  border: 1px #ddd solid;
+  padding: 10px;
+}
+
+table.dataTable thead th  {
+  border: 1px #ddd solid;
+  padding: 10px;
+}
+
+table.dataTable {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.table thead tr:first-child th{
+  border: 1px #ddd solid;
+}
+
+div.dataTables_length label {
+  float: left;
+  text-align: left;
+}
+
+div.dataTables_length select {
+  width: 75px;
+}
+
+div.dataTables_filter label {
+  float: right;
+}
+
+div.dataTables_info {
+  padding-top: 8px;
+}
+
+div.dataTables_paginate {
+  float: right;
+  margin: 0;
+}
+
+table.table {
+  clear: both;
+  margin-bottom: 6px !important;
+}
+
+table.table thead .sorting,
+table.table thead .sorting_asc,
+table.table thead .sorting_desc,
+table.table thead .sorting_asc_disabled,
+table.table thead .sorting_desc_disabled {
+  cursor: pointer;
+  *cursor: hand;
+}
+
+table.table thead .sorting { background: url('/images/sort_both.png') no-repeat center right; }
+table.table thead .sorting_asc { background: url('/images/sort_asc.png') no-repeat center right; }
+table.table thead .sorting_desc { background: url('/images/sort_desc.png') no-repeat center right; }
+
+table.table thead .sorting_asc_disabled { background: url('/images/sort_asc.png') no-repeat center right; }
+table.table thead .sorting_desc_disabled { background: url('/images/sort_desc.png') no-repeat center right; }
+
+table.dataTable th:active {
+  outline: none;
+}

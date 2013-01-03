@@ -1,0 +1,4 @@
+--------------------------------------------------------
+MODEL    = TRIGGER      = MAILER         = INSTANCE
+
+Customer = After Create = CustomerMailer = Welcome
